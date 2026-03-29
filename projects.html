@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Tushar Bothra</title>
+    <meta name="description" content="Selected engineering projects and case studies by Tushar Bothra.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="index.html">Tushar Bothra</a>
+            <nav class="site-nav" aria-label="Primary">
+				<a href="index.html">Home</a>
+                <a href="projects.html" aria-current="page">Projects</a>
+                <a href="writing.html">Writing</a>
+                <a href="about.html">About</a>
+                <a href="mailto:tusharbothra13@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero">
+            <div class="container narrow">
+                <p class="eyebrow">Projects</p>
+                <h1>Case studies with decisions, tradeoffs, outcomes and personal projects.</h1>
+                <p class="lead">
+                    This section is split between professional case studies and selected personal projects that
+                    best represent what I have built recently and what I enjoy building.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Professional work</p>
+                    <h2>Backend case studies from OMS</h2>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <p class="meta">Rate limiter real world application</p>
+                        <h2>Tenant-aware workflow trigger rate limiting</h2>
+                        <p>
+                            Enhanced the Order Monitor to rate limit workflow triggers when high-volume validation
+                            rules were hit, protecting downstream orchestration services from alert storms.
+                        </p>
+                        <div class="tag-row">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>Hazelcast</span>
+                            <span>OMS</span>
+                        </div>
+                        <p><strong>Problem:</strong> A large batch of orders breaching SLA thresholds in the same window could fire an unbounded number of workflow requests and saturate the orchestration service.</p>
+                        <p><strong>Approach:</strong> Introduced a tenant-aware sliding-window rate limiter in AlertFactory using Hazelcast counters, per-tenant configuration, overflow queues, and automatic replay when the window expired.</p>
+                        <p><strong>Outcome:</strong> Limited high-frequency alert rules safely, preserved existing behavior for unconfigured tenants, and prevented unnecessary downstream overload.</p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Backend operability enhancement</p>
+                        <h2>Cache controller for reloads without pod restarts</h2>
+                        <p>
+                            Built a cache reload controller so cached data could be refreshed without restarting pods,
+                            making the system easier to operate and less disruptive during runtime updates.
+                        </p>
+                        <div class="tag-row">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>Operability</span>
+                        </div>
+                        <p><strong>Problem:</strong> Due to slow mongoDB at starup, cache loads failed leading to empty caches and cache reloads were tied to pod restarts, which made operational changes slower and heavier than necessary.</p>
+                        <p><strong>Approach:</strong> Added an explicit controller to reload cache state on demand without requiring a restart cycle.</p>
+                        <p><strong>Outcome:</strong> Improved runtime operability and made configuration or data refresh workflows faster and cleaner.</p>
+                    </article>
+                </div>
+
+                <div class="section-heading project-section-gap">
+                    <p class="eyebrow">Personal Projects</p>
+                    <h2>Selected personal projects</h2>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <p class="meta">Personal Project | 2023</p>
+                        <h2>Tatkal</h2>
+                        <p>Tatkal website built with Streamlit and Firebase.</p>
+                        <div class="tag-row">
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>Firebase</span>
+                        </div>
+                        <p><strong>Why I picked it:</strong> It is one of the personal project which shows app-building with a complete user-facing workflow instead of an isolated demo.</p>
+                        <p><strong>Focus:</strong> Rapid web application development, data flow, and practical product implementation.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Tatkal" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Personal Project | 2023</p>
+                        <h2>Recipe Management</h2>
+                        <p>Recipe management application built with Java Spring MVC.</p>
+                        <div class="tag-row">
+                            <span>Java</span>
+                            <span>Spring MVC</span>
+                            <span>HTML</span>
+                        </div>
+                        <p><strong>Why I picked it:</strong> It is one of the clearest public repositories aligned with my long-term backend direction in Java and Spring.</p>
+                        <p><strong>Focus:</strong> Application structure, backend logic, and web application flow using the Java ecosystem.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Recipe-Management" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Personal Project</p>
+                        <h2>MERN chat application</h2>
+                        <p>Room-based real-time messaging with authentication and responsive UI behavior.</p>
+                        <div class="tag-row">
+                            <span>MongoDB</span>
+                            <span>Express</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                        <p><strong>Scope:</strong> Built a real-time chat application with authentication and room-based messaging using MongoDB, Express, React, and Node.js.</p>
+                        <p><strong>Focus:</strong> End-to-end full-stack development with real-time interaction flows and user-facing responsiveness.</p>
+                        <p><strong>Why it matters:</strong> Demonstrates breadth across frontend and backend while keeping product behavior central.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Room-Based-Web-Chat" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Personal Project</p>
+                        <h2>Blood Bank Database Management</h2>
+                        <p>Platform for managing blood banks, donor data, blood stock, hospitals, and order workflows.</p>
+                        <div class="tag-row">
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Data systems</span>
+                        </div>
+                        <p><strong>Why I picked it:</strong> This is a more complete systems-style project with multiple entities and operational workflows, which makes it a better showcase than a smaller demo.</p>
+                        <p><strong>Focus:</strong> Data modeling, application workflows, and structured problem solving around real organizational needs.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Blood-Bank-Database-Management" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Personal Project</p>
+                        <h2>Steel Bot</h2>
+                        <p>Discord bot in Python tailored for server automation, command handling, and uptime support.</p>
+                        <div class="tag-row">
+                            <span>Python</span>
+                            <span>Automation</span>
+                            <span>Bots</span>
+                        </div>
+                        <p><strong>Why I picked it:</strong> It is one of the repos with more sustained updates and shows event-driven automation instead of only CRUD-style application work.</p>
+                        <p><strong>Focus:</strong> API integrations, automation flows, and practical utility for a real user environment.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Steel-Bot" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+
+                    <article class="project-card">
+                        <p class="meta">Personal Project</p>
+                        <h2>Web Server Fingerprinting Tool</h2>
+                        <p>Linux-based tool for server fingerprinting using banner grabbing and supporting utilities for stronger evidence collection.</p>
+                        <div class="tag-row">
+                            <span>Python</span>
+                            <span>Security</span>
+                            <span>Linux</span>
+                        </div>
+                        <p><strong>Why I picked it:</strong> It reflects my cybersecurity background and shows evidence-driven tooling rather than just classroom-level exercises.</p>
+                        <p><strong>Focus:</strong> Security analysis, tooling integration, and collecting stronger signals for infrastructure identification.</p>
+                        <p><a class="text-link" href="https://github.com/Tushar9999999999/Web-Server-Fingerprinting-Tool" target="_blank" rel="noreferrer">View repository</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <p>&copy; 2026 Tushar Bothra</p>
+            <p>Projects that show execution, not just claims.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -2,90 +2,197 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Tushar Bothra | Software Engineer</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushar Bothra | Proof of Work</title>
+    <meta name="description"
+        content="Tushar Bothra builds backend systems, frontend features, and engineering workflows. This site collects projects, writing, and proof of work.">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="index.html">Tushar Bothra</a>
+            <nav class="site-nav" aria-label="Primary">
+				<a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="writing.html">Writing</a>
+                <a href="about.html">About</a>
+                <a href="mailto:tusharbothra13@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-	<header>
-		<h1>Tushar Bothra</h1>
-		<p>Software Engineer | Java | Spring Boot | React</p>
-		<div class="links">
-			<a href="https://github.com/Tushar9999999999" target="_blank">GitHub</a>
-			<a href="https://linkedin.com/in/tushar-bothra" target="_blank">LinkedIn</a>
-			<a href="mailto:tusharbothra13@gmail.com">Email</a>
-		</div>
-	</header>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Software engineer | backend + frontend + delivery</p>
+                    <h1>I build reliable software and document the work behind it.</h1>
+                    <p class="lead">
+                        This is my proof-of-work site: a place for project case studies, engineering notes,
+                        experiments, and visible progress over time.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="projects.html">Explore Projects</a>
+                        <a class="button button-secondary" href="writing.html">Read Writing</a>
+                    </div>
+                    <div class="inline-links">
+                        <a href="https://github.com/Tushar9999999999" target="_blank" rel="noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/tushar-bothra" target="_blank" rel="noreferrer">LinkedIn</a>
+                        <a href="mailto:tusharbothra13@gmail.com">Email</a>
+                    </div>
+                </div>
 
-	<section>
-		<h2>Professional Summary</h2>
-		<p>
-			Software Engineer with experience in building and maintaining Java/Spring Boot backend services
-			and React-based frontend features in enterprise supply chain applications.
-			Proven ability to deliver backend enhancements, fix critical issues, 
-			and improve QA automation through CI integrated test frameworks.
-		</p>
-	</section>
+                <aside class="hero-panel">
+                    <p class="panel-label">What this site is for</p>
+                    <ul class="signal-list">
+                        <li>Show real engineering work, not just resume bullets</li>
+                        <li>Publish case studies with problem, decisions, and outcomes</li>
+                        <li>Capture short notes on debugging, systems, and shipping</li>
+                    </ul>
+                    <p class="panel-note">
+                        I want to be known for building dependable backend systems in the OMS and supply chain space,
+                        especially where scale, SLAs, and operational reliability matter.
+                    </p>
+                </aside>
+            </div>
+        </section>
 
-	<section>
-		<h2>Experience</h2>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Featured proof</p>
+                    <h2>Writeups and Projects</h2>
+                </div>
 
-		<div class="card">
-			<h3>Software Engineer – Blue Yonder</h3>
-			<p>06/2024 – Present | SDE Intern 01/2024 - 06/2024</p>
-			<ul>
-				<li>Develop and maintain Java/Spring Boot microservices. </li>
-				<li>Implemented 10+ feature enhancements and critical bug fixes.</li>
-				<li>Built CI-integrated test automation reducing execution time by 50% using awaitility</li>
-				<li>Developed frontend features in React by implementing UI designs and resolving multiple functional and UI defects.</li>
-			</ul>
-		</div>
+                <div class="card-grid card-grid-featured">
+                    <article class="feature-card">
+                        <p class="meta">Case study | Spring Boot | Testing</p>
+                        <h3>Tenant-aware workflow trigger rate limiting for Order Monitor</h3>
+                        <p>
+                            Built a Hazelcast-backed, tenant-aware rate limiter inside the Order Monitor alert flow
+                            so high-frequency SLA breaches no longer overwhelm downstream orchestration services.
+                        </p>
+                        <p>
+                            Implemented a sliding-window counter keyed by tenant and configuration, queued overflow
+                            workflow tasks in Hazelcast, and replayed them automatically when the window reset.
+                        </p>
+                    </article>
 
-		<div class="card">
-			<h3>Cyber Security Intern – EY</h3>
-			<p>06/2023 – 08/2023</p>
-			<ul>
-				<li>Conducted penetration testing on 2 production applications.</li>
-				<li>Identified and documented security vulnerabilities.</li>
-			</ul>
-		</div>
-	</section>
+                    <article class="feature-card">
+                        <p class="meta">Enhancement | Cache control | Operability</p>
+                        <h3>Cache controller to reload configuration without pod restarts</h3>
+                        <p>
+                            Added a cache reload mechanism so operational and configuration updates could be applied
+                            without restarting pods, improving responsiveness during support and rollout scenarios.
+                        </p>
+                        <p>
+                            This work improved runtime operability and reduced the need for disruptive restarts when
+                            cached tenant or rule data had to be refreshed.
+                        </p>
+                    </article>
 
-	<section>
-		<h2>Skills</h2>
-		<div class="skills">
-			<span>Java</span>
-			<span>Spring Boot</span>
-			<span>React</span>
-			<span>Kotlin</span>
-			<span>REST APIs</span>
-			<span>MongoDB</span>
-			<span>SQL</span>
-			<span>AWS</span>
-			<span>CI/CD</span>
-			<span>JUnit</span>
-		</div>
-	</section>
+                    <article class="feature-card">
+                        <p class="meta">Writing | Systems | Career notes</p>
+                        <h3>Growing as a reactive Java engineer in the OMS domain</h3>
+                        <p>
+                            Notes on building a niche that compounds through backend depth, supply chain domain
+                            understanding, and steady execution across services, debugging, and production issues.
+                        </p>
+                        <p>
+                            I am especially interested in the individual contributor path where architectural depth
+                            and cross-team technical impact continue to scale over time.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-	<section>
-		<h2>Projects</h2>
-		<div class="card">
-			<h3>MERN Chat Application</h3>
-			<p>Real-time room-based messaging app with authentication.</p>
-		</div>
-		<div class="card">
-			<h3>Recipe Recommendation App (Java)</h3>
-			<p>Web application recommending recipes based on ingredients.</p>
-		</div>
-	</section>
+        <section class="section section-alt">
+            <div class="container split-layout">
+                <div>
+                    <div class="section-heading">
+                        <p class="eyebrow">Recent writing</p>
+                        <h2>Notes from the workbench</h2>
+                    </div>
 
-	<footer>
-		<p>© 2026 Tushar Bothra</p>
-	</footer>
+                    <div class="stack-list">
+                        <article class="list-card">
+                            <p class="meta">March 2026</p>
+                            <h3><a href="writing.html">Building a backend niche that compounds</a></h3>
+                            <p>Why I want to go deeper in reactive Java, backend reliability, and OMS workflows in supply chain.</p>
+                        </article>
 
+                        <article class="list-card">
+                            <p class="meta">Recent work</p>
+                            <h3><a href="writing.html">Rate limiting workflow triggers in Order Monitor</a></h3>
+                            <p>How I handled alert storms safely with Hazelcast counters, queues, and replay on window expiry.</p>
+                        </article>
+
+                        <article class="list-card">
+                            <p class="meta">Recent work</p>
+                            <h3><a href="writing.html">Reloading cache without restarting pods</a></h3>
+                            <p>A practical operability improvement that made cache refreshes safer and faster in production-like environments.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="sidebar-card">
+                    <p class="panel-label">Now</p>
+                    <h3>What I am focused on</h3>
+                    <p>
+                        Going deeper as a reactive Java developer at Blue Yonder in the OMS space while building the
+                        kind of backend depth that opens doors to top product companies.
+                    </p>
+                    <p>
+                        I enjoy backend development the most and want to build a niche that compounds through stronger
+                        system design, better production instincts, and repeatable technical execution.
+                    </p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Experience snapshot</p>
+                    <h2>Resume snapshot</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <p class="meta">Blue Yonder | 2024 to present</p>
+                        <h3>Software Engineer</h3>
+                        <p>
+                            Building and maintaining OMS microservices, shipping backend enhancements, improving QA
+                            automation, and contributing frontend fixes and features in React for supply chain workflows.
+                        </p>
+                    </article>
+
+                    <article class="timeline-item">
+                        <p class="meta">EY | 2023</p>
+                        <h3>Cyber Security Intern</h3>
+                        <p>
+                            Conducted application testing and documented security findings with a focus on practical risk.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="section-cta">
+                    <a class="text-link" href="about.html">View full background and skills</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-shell">
+            <p>&copy; 2026 Tushar Bothra</p>
+            <p>Built as a living proof-of-work portfolio on GitHub Pages.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
